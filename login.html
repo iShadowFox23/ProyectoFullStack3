@@ -206,20 +206,22 @@
 						<div class="section-title text-center">
 							<h3 class="title">Registrar Usuario</h3>
 						</div>
+						<!-- CREACIÓN FORMULARIO -->
+						 <form id="register-form">
 						<div class="form-group">
-										<input class="input" type="tel" name="Nombres" placeholder="Nombres">
+							<input class="input" type="text" name="Nombres" placeholder="Nombres">
 						</div>
 						<div class="form-group">
-										<input class="input" type="tel" name="Apellidos" placeholder="Apellidos">
+							<input class="input" type="text" name="Apellidos" placeholder="Apellidos">
 						</div>
 						<div class="form-group">
-										<input class="input" type="tel" name="Correo" placeholder="Correo">
+							<input class="input" type="email" name="Correo" id="email" placeholder="Correo">
 						</div>
 						<div class="form-group">
-										<input class="input" type="password" name="Contraseña" placeholder="Contraseña">
+							<input class="input" type="password" name="Contraseña" id="password" placeholder="Contraseña">
 						</div>
 						<div class="form-group">
-										<input class="input" type="password" name="Repetir" placeholder="Repetir Contraseña">
+							<input class="input" type="password" name="Repetir" id="confirmPassword" placeholder="Repetir Contraseña">
 						</div>
 						
 						<div class="input-checkbox">
@@ -230,13 +232,14 @@
 							</label>
 						</div>
 						<div class="input-checkbox">
-							<input type="checkbox" id="terms">
-							<label for="terms">
+							<input type="checkbox" id="news">
+							<label for="news">
 								<span></span>
 								Deseo recibir noticias y actualizaciones de MagicEast
 							</label>
 						</div>
-						<a href="#" class="primary-btn order-submit">Crear cuenta</a>
+							<button type="submit" class="primary-btn order-submit">Crear cuenta</button>
+						</form>
 					</div>
 					<!-- /Registrar usuario -->
 					 
