@@ -1,45 +1,390 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css\login.css">
-    <title>Sesion</title>
-</head>
-<body>
-    <div class="contenedor"></div>
-        <div class="giro-carta" id="giroCarta">
-            <div class="giro-carta-interior">
-                <div class="giro-carta-frente">
-                    <form id="sesionFormulario">
-                        <h1 style="color:black; text-align: center;">Inicio de sesión</h1>
-                        <input type="text" placeholder="Nombre de usuario" required>
-                        <input type="password" placeholder="Contraseña" required>
-                        <div style="position: relative">
-                            <input type="checkbox" id="recordarContraseña">
-                            <label for="recordarContraseña">¿Recordar contraseña?</label>
-                            <div class="password-toggle" onclick="visibilidadPalancaContraseña()">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-                            </div>
-                        </div>
-                        <button type="submit">Iniciar sesión</button>
+		<title>Electro - HTML Ecommerce Template</title>
 
-                        </form>
-                        <span class="toggle-text" id="registroTexto">Registrarse</span>
-                </div>
-                <div class="giro-carta-atras">
-                    <form id="registerForm">
-                        <h1 style="color: black; text-align: center;">Registrarse</h1>
-                        <input type="text" placeholder="Nombre" required>
-                        <input type="text" placeholder="Nombre de usuario" required>
-                        <input type="email" placeholder="Correo electrónico" required>
-                        <input type="password" placeholder="Contraseña" required>
-                        <button type="submit">Registrarse</button>
-                    </form>
-                    <span class="toggle-text" id="InicioTexto">Regresar al inicio</span>
-                </div>
-            </div>
-            <script src="js\login.js"></script>
-        </div>
-</body>
+ 		<!-- Google font -->
+ 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+ 		<!-- Bootstrap -->
+ 		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+
+ 		<!-- Slick -->
+ 		<link type="text/css" rel="stylesheet" href="css/slick.css"/>
+ 		<link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
+
+ 		<!-- nouislider -->
+ 		<link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
+
+ 		<!-- Font Awesome Icon -->
+ 		<link rel="stylesheet" href="css/font-awesome.min.css">
+
+ 		<!-- Custom stlylesheet -->
+ 		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    </head>
+	<body>
+		<!-- HEADER -->
+		<header>
+			<!-- TOP HEADER -->
+			<div id="top-header">
+				<div class="container">
+					<ul class="header-links pull-left">
+						<li><a href="#"><i class="fa fa-phone"></i> +56 9 0303 4567</a></li>
+						<li><a href="#"><i class="fa fa-envelope-o"></i> contacto@magiceast.cl</a></li>
+						<li><a href="https://www.google.com/maps/place/Magicsur+Chile/@-33.4471451,-70.6311205,18z/data=!3m1!4b1!4m6!3m5!1s0x9662c579452ba869:0xeeb742501e612dab!8m2!3d-33.4471474!4d-70.628685!16s%2Fg%2F11b5qw1v9h?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D" target="_blank"><i class="fa fa-map-marker"></i> Seminario 505, Providencia, Santiago de Chile</a></li>
+					</ul>
+					<ul class="header-links pull-right">
+						<li><a href="#"><i class="fa fa-user-o"></i> Mi Cuenta</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- /TOP HEADER -->
+
+			<!-- MAIN HEADER -->
+			<div id="header">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<!-- LOGO -->
+						<div class="col-md-3">
+							<div class="headerlogo">
+								<a href="./index.html" class="logo-text">
+                            <span class="magic">Magic</span><span class="west">East</span>
+                        		</a>
+							</div>
+						</div>
+						<!-- /LOGO -->
+
+						<!-- SEARCH BAR -->
+						<div class="col-md-6">
+							<div class="header-search">
+								<form>
+									<select class="input-select">
+										<option value="0">Todas</option>
+										<option value="1">Magic</option>
+										<option value="1">Gundam</option>
+									</select>
+									<input class="input" placeholder="Busqueda en catalogo">
+									<button class="search-btn">Buscar</button>
+								</form>
+							</div>
+						</div>
+						<!-- /SEARCH BAR -->
+
+						<!-- ACCOUNT -->
+						<div class="col-md-3 clearfix">
+							<div class="header-ctn">								
+
+								<!-- Cart -->
+								<div class="dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+										<i class="fa fa-shopping-cart"></i>
+										<span>Carrito</span>
+										<div class="qty">3</div>
+									</a>
+									<div class="cart-dropdown">
+										<div class="cart-list">
+											<div class="product-widget">
+												<div class="product-img">
+													<img src="./img/EndlessPunishment.jpg" alt="">
+												</div>
+												<div class="product-body">
+													<h3 class="product-name"><a href="#">Magic the Gathering: Duskmourn House of Horror Commander Deck Inglés, Endless Punishment</a></h3>
+													<h4 class="product-price"><span class="qty">1x</span>$119,000</h4>
+												</div>
+												<button class="delete"><i class="fa fa-close"></i></button>
+											</div>
+
+											<div class="product-widget">
+												<div class="product-img">
+													<img src="./img/Sleeve.jpg" alt="">
+												</div>
+												<div class="product-body">
+													<h3 class="product-name"><a href="#">Dragon Shield | Standard Size Card Matte Sleeves | 100 CT - Smooth & Tough Premium TCG Sleeves |</a></h3>
+													<h4 class="product-price"><span class="qty">1x</span>$15,000</h4>
+												</div>
+												<button class="delete"><i class="fa fa-close"></i></button>
+											</div>
+
+											<div class="product-widget">
+												<div class="product-img">
+													<img src="./img/perfect.jpg" alt="">
+												</div>
+												<div class="product-body">
+													<h3 class="product-name"><a href="#">Dragon Shield Inner Sleeve Clear Standard Size 100 ct Card Sleeves Individual Pack </a></h3>
+													<h4 class="product-price"><span class="qty">1x</span>$6,500</h4>
+												</div>
+												<button class="delete"><i class="fa fa-close"></i></button>
+											</div>
+										</div>
+										<div class="cart-summary">
+											<small>2 Producto(s) seleccionados</small>
+											<h5>SUBTOTAL: $140,500</h5>
+										</div>
+										<div class="cart-btns">
+											<a href="#">Ver Carrito</a>
+											<a href="#">Pagar<i class="fa fa-arrow-circle-right"></i></a>
+										</div>
+									</div>
+								</div>
+								<!-- /Cart -->
+
+								<!-- Menu Toogle -->
+								<div class="menu-toggle">
+									<a href="#">
+										<i class="fa fa-bars"></i>
+										<span>Menu</span>
+									</a>
+								</div>
+								<!-- /Menu Toogle -->
+							</div>
+						</div>
+						<!-- /ACCOUNT -->
+					</div>
+					<!-- row -->
+				</div>
+				<!-- container -->
+			</div>
+			<!-- /MAIN HEADER -->
+		</header>
+		<!-- /HEADER -->
+
+		
+
+		<!-- BREADCRUMB -->
+		<div id="breadcrumb" class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						<h3 class="breadcrumb-header">Inicio de sesion / Registrar usuario</h3>						
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /BREADCRUMB -->
+
+		<!-- SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<!-- Iniciar Sesion -->
+					<div class="col-md-5 order-details">
+						<div class="section-title text-center">
+							<h3 class="title">Iniciar Sesion</h3>
+						</div>
+						<div class="form-group">
+										<input class="input" type="text" name="tel" placeholder="Correo">
+						</div>
+						<div class="form-group">
+										<input class="input" type="password" name="tel" placeholder="Contraseña">
+						</div>				
+						<a href="#" class="primary-btn order-submit">Iniciar Sesion</a>
+					</div>
+					<!-- /Iniciar Sesion -->				
+					<!-- Registrar usuario -->
+					<div class="col-md-5 order-details">
+						<div class="section-title text-center">
+							<h3 class="title">Registrar Usuario</h3>
+						</div>
+						<div class="form-group">
+										<input class="input" type="tel" name="Nombres" placeholder="Nombres">
+						</div>
+						<div class="form-group">
+										<input class="input" type="tel" name="Apellidos" placeholder="Apellidos">
+						</div>
+						<div class="form-group">
+										<input class="input" type="tel" name="Correo" placeholder="Correo">
+						</div>
+						<div class="form-group">
+										<input class="input" type="password" name="Contraseña" placeholder="Contraseña">
+						</div>
+						<div class="form-group">
+										<input class="input" type="password" name="Repetir" placeholder="Repetir Contraseña">
+						</div>
+						
+						<div class="input-checkbox">
+							<input type="checkbox" id="terms">
+							<label for="terms">
+								<span></span>
+								He leido y acepto los <a href="#">terminos y condiciones</a> de uso
+							</label>
+						</div>
+						<div class="input-checkbox">
+							<input type="checkbox" id="terms">
+							<label for="terms">
+								<span></span>
+								Deseo recibir noticias y actualizaciones de MagicEast
+							</label>
+						</div>
+						<a href="#" class="primary-btn order-submit">Crear cuenta</a>
+					</div>
+					<!-- /Registrar usuario -->
+					 
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /SECTION -->
+
+		<!-- NEWSLETTER -->
+		<div id="newsletter" class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="newsletter">
+							<p>No te pierdas ninguna noticia</p>
+							<form>
+								<input class="input" type="email" placeholder="Ingresa Tu Email">
+								<button class="newsletter-btn"><i class="fa fa-envelope"></i> Suscribirse</button>
+							</form>
+							<ul class="newsletter-follow">
+								<li>
+									<a href="#"><i class="fa fa-facebook"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-twitter"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-instagram"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-pinterest"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /NEWSLETTER -->
+
+		<!-- FOOTER -->
+		<footer id="footer">
+			<!-- top footer -->
+			<div class="section">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Sobre Nosotros</h3>
+								<p>En Magic East tenemos los mejores productos al mejor precio. Somos la mejor de las cuatro direcciones cardinales.</p>
+								<ul class="footer-links">
+									<li><a href="#"><i class="fa fa-map-marker"></i>Seminario 505, Providencia, Santiago de Chile</a></li>
+									<li><a href="#"><i class="fa fa-phone"></i>+56 9 0303 4567</a></li>
+									<li><a href="#"><i class="fa fa-envelope-o"></i>contacto@magiceast.cl</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Categorias</h3>
+								<ul class="footer-links">
+									<li><a href="#">Ofertas</a></li>
+									<li><a href="#">Mazos</a></li>
+									<li><a href="#">Sobres</a></li>
+									<li><a href="#">Eventos</a></li>
+									<li><a href="#">Accesorios</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="clearfix visible-xs"></div>
+
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Informacion</h3>
+								<ul class="footer-links">
+									<li><a href="#">Sobre nosotros</a></li>
+									<li><a href="#">Contactanos</a></li>
+									<li><a href="#">Politica de Privacidad</a></li>
+									<li><a href="#">Politica de Reembolsos</a></li>
+									<li><a href="#">Terminos y Condiciones</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Servicios</h3>
+								<ul class="footer-links">
+									<li><a href="#">Mi cuenta</a></li>
+									<li><a href="#">Ver Carrito</a></li>
+									<li><a href="#">Seguimiento del pedido</a></li>
+									<li><a href="#">Soporte</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- /row -->
+				</div>
+				<!-- /container -->
+			</div>
+			<!-- /top footer -->
+
+			<!-- bottom footer -->
+			<div id="bottom-footer" class="section">
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<ul class="footer-payments">
+								<li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
+								<li><a href="#"><i class="fa fa-credit-card"></i></a></li>
+								<li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
+								<li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
+								<li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
+								<li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
+							</ul>
+							<span class="copyright">
+								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+								Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							</span>
+						</div>
+					</div>
+						<!-- /row -->
+				</div>
+				<!-- /container -->
+			</div>
+			<!-- /bottom footer -->
+		</footer>
+		<!-- /FOOTER -->
+
+		<!-- jQuery Plugins -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/slick.min.js"></script>
+		<script src="js/nouislider.min.js"></script>
+		<script src="js/jquery.zoom.min.js"></script>
+		<script src="js/main.js"></script>
+
+	</body>
 </html>
