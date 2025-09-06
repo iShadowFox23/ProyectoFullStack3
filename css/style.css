@@ -457,6 +457,22 @@ textarea.input {
   display: block;
 }
 
+.headerlogo a.logo-text {
+    font-size: 32px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.headerlogo a.logo-text .magic {
+    font-family: 'Cursive', sans-serif; 
+    color: #ffffff;
+}
+
+.header__logo a.logo-text .west {
+    font-family: 'Arial Black', sans-serif;
+    color: #e53637;
+}
+
 /*----------------------------*\
 	Search
 \*----------------------------*/
