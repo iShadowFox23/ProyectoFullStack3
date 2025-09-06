@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css\login.css">
+    <title>Sesion</title>
+</head>
+<body>
+    <div class="contenedor"></div>
+        <div class="giro-carta" id="giroCarta">
+            <div class="giro-carta-interior">
+                <div class="giro-carta-frente">
+                    <form id="sesionFormulario">
+                        <h1 style="color:black; text-align: center;">Inicio de sesión</h1>
+                        <input type="text" placeholder="Nombre de usuario" required>
+                        <input type="password" placeholder="Contraseña" required>
+                        <div style="position: relative">
+                            <input type="checkbox" id="recordarContraseña">
+                            <label for="recordarContraseña">¿Recordar contraseña?</label>
+                            <div class="password-toggle" onclick="visibilidadPalancaContraseña()">
+
+                            </div>
+                        </div>
+                        <button type="submit">Iniciar sesión</button>
+
+                        </form>
+                        <span class="toggle-text" id="registroTexto">Registrarse</span>
+                </div>
+                <div class="giro-carta-atras">
+                    <form id="registerForm">
+                        <h1 style="color: black; text-align: center;">Registrarse</h1>
+                        <input type="text" placeholder="Nombre" required>
+                        <input type="text" placeholder="Nombre de usuario" required>
+                        <input type="email" placeholder="Correo electrónico" required>
+                        <input type="password" placeholder="Contraseña" required>
+                        <button type="submit">Registrarse</button>
+                    </form>
+                    <span class="toggle-text" id="InicioTexto">Regresar al inicio</span>
+                </div>
+            </div>
+            <script src="js\login.js"></script>
+        </div>
+</body>
+</html>
