@@ -185,6 +185,7 @@
 		<div class="section">
 			<!-- container -->
 			<div class="container">
+				<div class="container">
 				<!-- row -->
 				<div class="row">
 					<!-- Iniciar Sesion -->
@@ -192,13 +193,16 @@
 						<div class="section-title text-center">
 							<h3 class="title">Iniciar Sesion</h3>
 						</div>
+						<form id="loginForm">
 						<div class="form-group">
-										<input class="input" type="text" name="tel" placeholder="Correo">
+							<input class="input" type="email" name="emailInput" placeholder="Correo">
 						</div>
 						<div class="form-group">
-										<input class="input" type="password" name="tel" placeholder="Contraseña">
+							<input class="input" type="password" name="passwordInput" placeholder="Contraseña">
 						</div>				
-						<a href="#" class="primary-btn order-submit">Iniciar Sesion</a>
+						<button type="submit" id="loginBtn" class="primary-btn order-submit">Iniciar sesión</button>
+						<p id="errorMsg" style="color: red; display: none; margin-top: 10px;"></p>
+						</form> 
 					</div>
 					<!-- /Iniciar Sesion -->				
 					<!-- Registrar usuario -->
